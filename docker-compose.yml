@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  auth-service:
+    build: ./auth_service
+    ports:
+      - "8001:8000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+    env_file:
+      - ./auth_service/.env
+    depends_on:
+      - mongo
+    
+    
+  user-service:
+    build: ./user_service
+    ports:
+      - "8002:8000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+    depends_on:
+      - mongo
+
+  
+  chat-service:
+    build: ./chat_service
+    ports:
+      - "8003:8000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+    depends_on:
+      - mongo
+
+  
+  notification-service:
+    build: ./notification_service
+    ports:
+      - "8004:8000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+    depends_on:
+      - mongo
+
+
+
+
+  mongo:
+    image: hub.hamdocker.ir/library/mongo:6.0
+    container_name: mongo
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
