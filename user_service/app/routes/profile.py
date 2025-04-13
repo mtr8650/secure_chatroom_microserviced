@@ -1,5 +1,4 @@
-from fastapi import APIRouter, HTTPException ,Depends
-from app.models import UserProfile
+from fastapi import APIRouter ,Depends
 from beanie import PydanticObjectId
 from app.dependencies import get_current_user
 
