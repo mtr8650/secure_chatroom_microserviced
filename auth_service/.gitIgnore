@@ -1,0 +1,57 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.env
+.env
+.env.*  # optional: multiple envs like .env.dev, .env.prod
+*.db
+*.bak
+
+# === Poetry ===
+poetry.lock
+.cache/
+dist/
+build/
+
+# === Virtualenv ===
+.venv/
+venv/
+ENV/
+env/
+pip-wheel-metadata/
+
+# === Docker ===
+*.tar
+*.pid
+docker-compose.override.yml
+docker-compose.local.yml
+.dockerignore
+
+# === VSCode / PyCharm / IDEs ===
+.vscode/
+.idea/
+*.code-workspace
+
+# === OS / Misc ===
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# === Testing / Coverage ===
+htmlcov/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+test-results.xml
+junit-*.xml
+
+# === MongoDB Dumps (if you use mongodump) ===
+dump/
