@@ -43,6 +43,8 @@ services:
       - MONGO_URI=mongodb://mongo:27017
     depends_on:
       - mongo
+    env_file:
+      - ./notification_service/.env
     
 
 

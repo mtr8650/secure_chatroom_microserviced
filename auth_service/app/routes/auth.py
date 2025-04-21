@@ -27,11 +27,11 @@ async def register_user(payload: RegisterRequest):
     user = User(email=payload.email, hashed_password=hashed)
     await user.insert()
     async with httpx.AsyncClient() as client:
-        await client.post("http://notification-service:8000/notify", json={
-            "to_email": payload.email,
-            "subject": "Welcome to the Chat App!",
-            "body": f"Hi {payload.email.split('@')[0]}, your account has been created."
+        await client.post("http://notification-service:8000/notify/login", json={
+            "email": payload.email
         })
+
+
     return {"message": "User registered successfully", "user_id": str(user.id)}
 
 
