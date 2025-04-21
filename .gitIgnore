@@ -5,10 +5,9 @@ __pycache__/
 *.pyd
 *.log
 *.sqlite3
-*.env
-.env
-.env.*  # optional: multiple envs like .env.dev, .env.prod
 *.db
+*.env
+.env.*
 *.bak
 
 # === Poetry ===
@@ -25,33 +24,30 @@ env/
 pip-wheel-metadata/
 
 # === Docker ===
-*.tar
 *.pid
+*.tar
+.dockerignore
 docker-compose.override.yml
 docker-compose.local.yml
-.dockerignore
 
-# === VSCode / PyCharm / IDEs ===
+# === Testing ===
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+test-results.xml
+junit-*.xml
+
+# === Mongo Dumps (optional) ===
+dump/
+
+# === IDE/editor files ===
 .vscode/
 .idea/
 *.code-workspace
 
-# === OS / Misc ===
+# === OS clutter ===
 .DS_Store
 Thumbs.db
 *.swp
-*.swo
 *~
-
-# === Testing / Coverage ===
-htmlcov/
-.coverage
-.coverage.*
-.cache
-.pytest_cache/
-nosetests.xml
-test-results.xml
-junit-*.xml
-
-# === MongoDB Dumps (if you use mongodump) ===
-dump/
